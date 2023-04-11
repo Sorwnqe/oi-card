@@ -1,0 +1,10 @@
+node_modules
+.next
+static
+assets
+.pnpm-store
+.yarn.lock
+dist
+*.stories.tsx
+*.js
+.turbo
