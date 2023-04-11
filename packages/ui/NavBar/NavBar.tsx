@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-const NavBar = () => {
-  return <header>123</header>;
+import { Menu, MenuProps } from 'antd';
+
+const NavBar: React.FC<MenuProps> = (props) => {
+  return <Menu mode="horizontal" {...props} />;
 };
 
 export default NavBar;
