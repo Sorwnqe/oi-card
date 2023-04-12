@@ -1,11 +1,12 @@
 import { NavBar } from '@oi/ui';
 import styled from 'styled-components';
 
-export const StyledHeaderWrapper = styled.div`
+export const StyledHeaderWrapper = styled.div<{ bgColor?: string }>`
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
+  background: ${({ bgColor }) => bgColor};
 
   .logo {
     margin-right: 1rem;

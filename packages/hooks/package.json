@@ -1,0 +1,11 @@
+{
+  "name": "@oi/hooks",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28"
+  }
+}

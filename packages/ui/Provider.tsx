@@ -11,6 +11,8 @@ const ConfigProvider: React.FC<{ children: React.ReactNode } & ConfigProviderPro
     <AntdConfigProvider
       theme={{
         token: {
+          wireframe: false,
+          borderRadius: 22,
           colorPrimary: '#3136ff',
           colorPrimaryTextActive: '#3136ff',
         },

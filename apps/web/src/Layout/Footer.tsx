@@ -13,7 +13,9 @@ const Footer = () => {
             <p className="size14 oi-text">Subscribe for waitlist &amp; growth tips</p>
             <div className="oi-input row">
               <input type="text" placeholder="Enter your email" />
-              <div className="oi-but active cur">Subscribe</div>
+              <a href="https://oi.xyz/#/">
+                <div className="oi-but active cur">Subscribe</div>
+              </a>
             </div>
           </div>
           <div className="oi-bxnsg">

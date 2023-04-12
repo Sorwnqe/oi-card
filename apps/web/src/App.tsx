@@ -1,4 +1,5 @@
 import React from 'react';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import { LanguageProvider } from '@oi/localization';
 import { ConfigProvider } from '@oi/ui';
@@ -9,7 +10,9 @@ const App = () => {
   return (
     <ConfigProvider prefixCls="oi-">
       <LanguageProvider>
-        <Home />
+        <ParallaxProvider>
+          <Home />
+        </ParallaxProvider>
       </LanguageProvider>
     </ConfigProvider>
   );

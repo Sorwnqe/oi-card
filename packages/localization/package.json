@@ -5,11 +5,11 @@
   "types": "./index.ts",
   "private": true,
   "devDependencies": {
-    "@types/react": "^18.0.34",
+    "@types/react": "^18.0.28",
     "@types/lodash": "^4.14.192"
   },
   "dependencies": {
-    "react": "^18.2.0",
+    "react": "^17.0.2",
     "lodash": "^4.17.21"
   }
 }

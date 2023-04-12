@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@oi/ui": "workspace:*",
+    "@oi/hooks": "workspace:*",
     "@oi/localization": "workspace:*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@oi/ui": "workspace:*",
+    "rc-queue-anim": "^2.0.0",
+    "rc-scroll-anim": "^2.7.6",
+    "rc-tween-one": "^3.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.8.0",
+    "react-scroll-parallax": "^3.4.2",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
