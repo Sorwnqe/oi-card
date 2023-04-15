@@ -1,27 +1,27 @@
 import * as React from 'react';
 
 import { useTranslation } from '@oi/localization';
-import QueueAnim from 'rc-queue-anim';
-import TweenOneGroup from 'rc-tween-one/lib/TweenOneGroup';
+import { motion, useSpring } from 'framer-motion';
 
 import { StyledHomeContainer, StyledHomeInner } from './style';
 
+const animate = {
+  y: 0,
+};
+
 const Content = () => {
   const { t } = useTranslation();
+  const y = useSpring(30, { duration: 0.5 });
 
   return (
     <StyledHomeContainer>
       <StyledHomeInner>
-        <TweenOneGroup
-          key="base-queue-group"
-          enter={{ y: '+=30', type: 'from', ease: 'easeInOutQuad' }}
-          leave={{ y: '+=30', type: 'to', ease: 'easeInOutQuad' }}
-        >
-          <QueueAnim key="base-queue-ani" type={['right', 'left']}>
-            <h1 className="oi-h1 title">{t('home.container')}</h1>
-            <p className="oi-desc desc">{t('home.description')}</p>
-          </QueueAnim>
-        </TweenOneGroup>
+        <motion.div style={{ y }} animate={animate} transition={{ type: 'spring' }}>
+          <h1 className="title">{t('home.container.line1')}</h1>
+          <h1 className="oi-text title">{t('home.container.line2')}</h1>
+          <p className="lines desc">{t('home.description.line1')}</p>
+          <p className="desc">{t('home.description.line2')}</p>
+        </motion.div>
       </StyledHomeInner>
     </StyledHomeContainer>
   );

@@ -17,5 +17,8 @@ export default (): UserConfig => {
       ],
     },
     plugins: [react()],
+    server: {
+      host: true,
+    },
   };
 };

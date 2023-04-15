@@ -1,4 +1,3 @@
-import { Card } from '@oi/ui';
 import styled from 'styled-components';
 
 export const StyledHomeContainer = styled.div`
@@ -9,32 +8,60 @@ export const StyledHomeContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1.96rem 0 1rem 0;
 `;
 
 export const StyledHomeInner = styled.div`
-  max-width: 6.19rem;
+  font-size: 100%;
   text-align: center;
   margin-bottom: 0.4rem;
 
   .title {
-    padding-right: 0.24rem;
-    padding-left: 0.24rem;
-    font-size: 0.6rem;
-    margin: 0.48rem auto;
+    font-size: 72px;
+    margin: 0 auto;
+  }
+
+  .lines {
+    margin-top: 0.32rem;
   }
 
   .desc {
     margin-bottom: 0px;
-    font-size: 0.24rem;
+    font-size: 24px;
     color: #595961;
+  }
+
+  @media screen and (max-width: 991px) {
+    .title {
+      font-size: 64px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 48px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .title {
+      font-size: 32px;
+    }
+    .desc {
+      font-size: 14px;
+    }
   }
 `;
 
 export const StyledCardWidgetWrapper = styled.div`
-  margin-bottom: 1.4rem;
+  width: 100%;
+  padding-bottom: 140px;
+
+  .oi-card-inner {
+    padding: 0 0.2rem;
+  }
 
   .widget-wrapper {
+    padding: 0 0.2rem;
     max-width: 14rem;
     margin: 0 auto;
     margin-bottom: 0.24rem;
@@ -44,17 +71,28 @@ export const StyledCardWidgetWrapper = styled.div`
     grid-row-gap: 0.26rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  @media screen and (max-width: 991px) {
+    padding-bottom: 90px;
+
+    .widget-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding-bottom: 64px;
+  }
+  @media screen and (max-width: 576px) {
+    padding-bottom: 56px;
+  }
 `;
 
-export const StyledCardFull = styled.div<{ position: 'left' | 'right'; bg?: string }>`
+export const StyledCardFull = styled.div<{ position: 'left' | 'right' }>`
   display: flex;
   justify-content: space-between;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ebeef5;
-  border-radius: 0.24rem;
+  border-radius: 16px;
   overflow: hidden;
-  background-color: ${({ bg }) => bg};
+  background-color: #f5f5fa;
 
   grid-column-start: span 3;
   grid-column-end: span 3;
@@ -63,19 +101,18 @@ export const StyledCardFull = styled.div<{ position: 'left' | 'right'; bg?: stri
 
   .content {
     max-width: 5.37rem;
-    padding: 1.24rem 0.79rem;
+    padding: 1.24rem 0.49rem;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.2rem;
 
     h1 {
-      font-size: 0.42rem;
+      font-size: 42px;
       margin-bottom: 0.18rem;
       color: #121214;
     }
     p {
+      font-size: 24px;
       margin-bottom: 0;
       color: #595961;
     }
@@ -83,38 +120,103 @@ export const StyledCardFull = styled.div<{ position: 'left' | 'right'; bg?: stri
 
   .img-wrapper {
     max-width: 5.21rem;
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: ${({ position }) =>
-        position === 'left' ? '0.24rem 0 0 0.24rem' : '0 0.24rem 0.24rem 0'};
+  @media screen and (max-width: 991px) {
+    &.left {
+      flex-direction: column;
+    }
+
+    flex-direction: column-reverse;
+    grid-column-start: span 1;
+    grid-column-end: span 1;
+    grid-row-start: span 1;
+    grid-row-end: span 1;
+
+    .content {
+      max-width: 100%;
+      padding: 0.6rem 0.49rem;
+    }
+    .content h1 {
+      font-size: 48px;
+    }
+    .content p {
+      font-size: 24px;
+    }
+
+    .img-wrapper {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .content h1 {
+      font-size: 32px;
+    }
+    .content p {
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .content h1 {
+      font-size: 24px;
+    }
+    .content p {
+      font-size: 14px;
     }
   }
 `;
 
-export const StyledCard = styled(Card)<{ bgColor?: string }>`
-  display: flex;
+export const StyledCard = styled.div`
+  display: block;
   justify-content: space-between;
-  border-radius: 0.22rem;
+  border-radius: 16px;
   overflow: hidden;
-  background-color: ${({ bgColor }) => bgColor};
-  padding: 0.2rem 0.12rem 0.3rem;
+  background-color: #f5f5fa;
+  padding: 0.6rem 0.79rem;
 
   img {
-    width: 0.72rem;
-    max-height: 0.72rem;
-    min-height: 0.72rem;
-    min-width: 0.72rem;
+    width: 72px;
+    height: 72px;
     margin-bottom: 0.22rem;
-    border-radius: 0.16rem;
+    border-radius: 16px;
   }
   h3 {
-    font-size: 0.24rem;
+    font-size: 32px;
     margin-bottom: 0.09rem;
     letter-spacing: -0.005rem;
   }
   p {
-    font-size: 0.18rem;
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 992px) {
+    display: flex;
+    gap: 24px;
+
+    img {
+      margin-top: 14px;
+    }
+
+    h3 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    display: block;
+
+    img {
+      margin-top: 14px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 `;

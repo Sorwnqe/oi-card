@@ -5,6 +5,19 @@ html,body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,SF Pro,SF UI,Helvetica Neue,Helvetica,Microsoft YaHei,Arial,sans-serif;
 }
 
+@media (max-width: 1200px) {
+  html,body {
+    font-size: 78.125px;
+  }
+}
+
+@media (max-width: 992px) {
+  html,body {
+    font-size: 62.5px;
+  }
+}
+
+
 blockquote, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, textarea, ul {
   margin: 0;
   padding: 0;
@@ -27,6 +40,14 @@ blockquote, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, 
 }
 
 .oi-h1 {
+  font-size: .72rem;
+}
+
+.oi-text {
   color: #3136ff;
-  font-size: .96rem;
+  font-size: .72rem;
+}
+img {
+  width: 100%;
+  height: 100%;
 }

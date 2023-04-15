@@ -2,31 +2,29 @@ import { CardWidgetDataSource } from '@/Home/components/CardWidget';
 
 export const infos2 = (): CardWidgetDataSource => ({
   key: 'EARN CARD',
-  title: 'EARN CARD',
+  title: 'Earn Card',
   desctipion:
     'A prepaid card that allows you to spend mulitiple currencies seamlessly anywhere in the world*. Spend 150+ currencies at millions of retailers and service providers, in store or online.',
-  img: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/616b106ca35cb35b9fec8b49_Earn-Guild-Card-2x.jpg',
+  img: '/assets/616b107996325e5dde6834EARN_CARD.jpg',
   items: [
     {
       key: 'Cryptocurrency',
-      title: 'Cryptocurrency',
-      desctipion:
-        'Buy and sell crypto from our inventory with one simple low rate and quick wallet to wallet transfers.',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/61632e7cbaff3319850bb7f6_icon-2-values-dark-template.svg',
+      title: '150+ Countries',
+      desctipion: 'Spend multiple traditional currencies anywhere MasterCard is accepted.',
+      icon: '/assets/cd_3466782.svg',
     },
     {
       key: 'Traditional Currency',
-      title: 'Traditional Currency',
+      title: 'Travel Discounts',
       desctipion:
-        'A flexible alternative to your bank with no account fees. Bank transfers and low fees. Spend 150+ traditional currencies with EARN prepaid card.',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/61632e7cbaff33a1550bb82e_icon-1-careers-perks-dark-template.svg',
+        'Save precious time and money. Use your Club Swan virtual assistant for your travel needs.',
+      icon: '/assets/cd_3466788.svg',
     },
     {
       key: 'Concierge',
-      title: 'Concierge',
-      desctipion:
-        'Save precious time and money. Use your EARN virtual assistant for your travel needs. Exclusive events, VIP dining and much more.',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/61632e7cbaff33051e0bb83d_icon-1-contact-links-dark-template.svg',
+      title: 'Luxury Concierge',
+      desctipion: 'All requests, large or small, are handled with care and efficiency.',
+      icon: '/assets/cd_3466789.svg',
     },
   ],
 });

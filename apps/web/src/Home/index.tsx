@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <Layout>
       <Content />
-      <CardWidget dataSource={infos1()} position="right" bgColor="#f5f5fa" />
-      <CardWidget dataSource={infos2()} position="left" bgColor="#f5f5fa" />
-      <CardWidget dataSource={infos3()} position="right" bgColor="#f5f5fa" />
+      <CardWidget dataSource={infos1()} position="right" />
+      <CardWidget dataSource={infos2()} position="left" />
+      <CardWidget dataSource={infos3()} position="right" />
     </Layout>
   );
 };

@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-import QueueAnim from 'rc-queue-anim';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import TweenOneGroup from 'rc-tween-one/lib/TweenOneGroup';
+import { motion, useInView, Variants } from 'framer-motion';
 
 import { StyledCard, StyledCardFull, StyledCardWidgetWrapper } from './style';
 
@@ -14,55 +12,66 @@ export interface CardWidgetDataSource {
   img?: string;
   items?: CardWidgetDataSource[];
 }
+const variants: Variants = {
+  offetScreen: { y: 60, opacity: 0 },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 const CardWidget: React.FC<{
   dataSource: CardWidgetDataSource;
   position?: 'left' | 'right';
-  bgColor?: string;
-}> = ({ dataSource, position = 'right', bgColor }) => {
+}> = ({ dataSource, position = 'right' }) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <StyledCardWidgetWrapper>
-      <OverPack playScale={0.1}>
-        <TweenOneGroup
-          key={`${dataSource.title}-group`}
-          enter={{ y: '+=30', type: 'from', ease: 'easeInOutQuad' }}
-          leave={{ y: '+=30', type: 'to', ease: 'easeInOutQuad' }}
-        >
-          <QueueAnim
-            key={`${dataSource.title}-queue-card`}
-            type={['right', 'left']}
-            className="widget-wrapper"
-          >
-            <StyledCardFull position={position} bg={bgColor}>
-              {position === 'left' && (
-                <div className="img-wrapper">
-                  <img src={dataSource.img} alt={dataSource.title} />
-                </div>
-              )}
+    <StyledCardWidgetWrapper
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateY(100px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.5s',
+      }}
+    >
+      <motion.div className="widget-wrapper" variants={variants}>
+        <StyledCardFull position={position} className={position}>
+          {position === 'left' && (
+            <div className="img-wrapper">
+              <img src={dataSource.img} alt={dataSource.title} />
+            </div>
+          )}
 
-              <div className="content">
-                <h1 className="oi-h1">{dataSource.title}</h1>
-                <p>{dataSource.desctipion}</p>
+          <div className="content">
+            <h1 className="oi-h1">{dataSource.title}</h1>
+            <p>{dataSource.desctipion}</p>
+          </div>
+
+          {position === 'right' && (
+            <div className="img-wrapper">
+              <img src={dataSource.img} alt={dataSource.title} />
+            </div>
+          )}
+        </StyledCardFull>
+
+        {dataSource.items &&
+          dataSource?.items.map((item) => (
+            <StyledCard key={item.key}>
+              <img src={item.icon} alt={item.title} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.desctipion}</p>
               </div>
-
-              {position === 'right' && (
-                <div className="img-wrapper">
-                  <img src={dataSource.img} alt={dataSource.title} />
-                </div>
-              )}
-            </StyledCardFull>
-
-            {dataSource.items &&
-              dataSource?.items.map((item) => (
-                <StyledCard key={item.key} bgColor={bgColor}>
-                  <img src={item.icon} alt={item.title} />
-                  <h3>{item.title}</h3>
-                  <p>{item.desctipion}</p>
-                </StyledCard>
-              ))}
-          </QueueAnim>
-        </TweenOneGroup>
-      </OverPack>
+            </StyledCard>
+          ))}
+      </motion.div>
     </StyledCardWidgetWrapper>
   );
 };

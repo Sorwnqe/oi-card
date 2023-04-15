@@ -5,27 +5,27 @@ export const infos3 = (): CardWidgetDataSource => ({
   title: 'Smart Accounts',
   desctipion:
     'The flexible accounts available through EARN gives you access to multiple traditional currency wallets, bank transfers and an elegant metal EARN prepaid card allowing you to spend in more than 150 currencies around the globe.',
-  img: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/6170f9e9ac366c3f04f82f39_dollar-euro-pound-and-yen-currency-icons-vector-4465325.jpg',
+  img: '/assets/616b107996325e5dde6834EARN_COINS.jpg',
   items: [
     {
       key: 'EARN CARD',
-      title: 'EARN CARD',
+      title: 'Earn Card',
       desctipion:
         'Hold your money in multiple currencies with quick access and ability to spend across the globe with your EARN card.',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/617ca0785ecb8e004d14a064_credibility-mastercard.png',
+      icon: '/assets/cd_3466787.svg',
     },
     {
       key: 'FIAT',
       title: 'FIAT',
       desctipion: 'USD, GBP, EUR, CNY, & JPY',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/61632e7cbaff33aecd0bb80d_icon-8-features-dark-template.svg',
+      icon: '/assets/cd_3466783.svg',
     },
     {
       key: 'ON AND OFF RAMP',
-      title: 'ON AND OFF RAMP',
+      title: 'On and off Ramp',
       desctipion:
         'Transfer funds in and out of your account with SEPA/SWIFT/Faster Payment/Fed Wire Payments.',
-      icon: 'https://assets.website-files.com/61632e7cbaff332d7d0bb759/61632e7cbaff33522f0bb80e_icon-5-features-dark-template.svg',
+      icon: '/assets/cd_3466784.svg',
     },
   ],
 });

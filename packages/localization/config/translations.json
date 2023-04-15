@@ -1,4 +1,6 @@
 {
-  "home.container": "One Account, Endless Opportunities",
-  "home.description": "Manage all your crypto and traditional currencies within one simple platform."
+  "home.container.line1": "One Account,",
+  "home.container.line2": "Endless Opportunities",
+  "home.description.line1": "Manage all your crypto and traditional",
+  "home.description.line2": "currencies within one simple platform"
 }
